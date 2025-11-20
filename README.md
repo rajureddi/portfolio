@@ -27,7 +27,7 @@
 
 ## TL;DR
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [raju2525](https://github.com/rajureddi/Portfolio). Thanks!
+You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [rajureddi](https://github.com/rajureddi/Portfolio). Thanks!
 
 ## Built With
 
