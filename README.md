@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website - v2.0<br/>
-  <a href="https://portfolio-rajureddy.vercel.app/" target="_blank">rajureddie.tech</a>
+  <a href="https://rajureddie.site" target="_blank">rajureddie.site</a>
 </h2>
 <div align="center">
   
@@ -27,11 +27,11 @@
 
 ## TL;DR
 
-You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [raju2525](https://github.com/raju2525/Portfolio). Thanks!
+You can fork this repo to modify and make changes of your own. Please give me proper credit by linking back to [raju2525](https://github.com/rajureddi/Portfolio). Thanks!
 
 ## Built With
 
-My personal portfolio <a href="https://portfolio-rajureddy.vercel.app/" target="_blank">rajureddie.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio <a href="https://rajureddie.site/" target="_blank">rajureddie.site</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
