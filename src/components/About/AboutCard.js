@@ -11,7 +11,7 @@ function AboutCard() {
             Hi Everyone, I am <span className="purple">RAJU BANDAM </span>
             from <span className="purple"> Hyderabad, India.</span>
             <br />
-            I am currently B.Tech CSE-AIML third year student at <span className="purple">MALLA REDDY UNIVERISTY</span>.
+            I am currently B.Tech CSE-AIML Final year student at <span className="purple">MALLA REDDY UNIVERISTY</span>.
             <br />
           
             <br />
