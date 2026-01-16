@@ -12,7 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-<<<<<<< HEAD
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -29,8 +29,7 @@
   border: 1px solid rgba(138, 43, 226, 0.4);
   white-space: nowrap;
 }
-=======
->>>>>>> d1f6ee981cb0b8c4fe648fa87b1c1b4a63f6b5d0
+
 
 .App-header {
   background-color: #282c34;
