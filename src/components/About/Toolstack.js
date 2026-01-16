@@ -6,7 +6,7 @@ import {
   SiReact,
   SiFlask,
   SiHtml5,
- SiTensorflow,SiGithub,SiWindows,SiScikitlearn
+ SiTensorflow,SiGithub,SiWindows
 } from "react-icons/si";
 
 function Toolstack() {
