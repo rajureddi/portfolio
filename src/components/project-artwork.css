@@ -1,0 +1,42 @@
+.artwork {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  aspect-ratio: 600 / 380;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.art-scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Manrope Variable', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.art-display {
+  font-family: 'Manrope Variable', sans-serif;
+}
+
+.art-mono {
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+}
+
+.art-aura {
+  background: #cdd7c4;
+}
+.art-vision {
+  background: #303a29;
+}
+.art-pay {
+  background: #e9d3bf;
+}
+.art-traffic {
+  background: #bbced0;
+}

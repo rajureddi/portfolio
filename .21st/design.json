@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Raju Bandam Portfolio",
+    "productType": "AI and full-stack engineering portfolio",
+    "stack": [
+      "react",
+      "shadcn",
+      "tailwind-v3",
+      "vite"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/index.css"
+    ],
+    "components": [
+      "src/components/ui"
+    ],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "background": {
+        "value": "#fafaf8",
+        "source": "src/index.css"
+      },
+      "foreground": {
+        "value": "#171717",
+        "source": "src/index.css"
+      },
+      "surface": {
+        "value": "#f0f0ec",
+        "source": "src/index.css"
+      },
+      "muted": {
+        "value": "#62625d",
+        "source": "src/index.css"
+      }
+    },
+    "typography": {
+      "heading": "Manrope Variable with italic Georgia accent",
+      "body": "Manrope Variable",
+      "metadata": "DM Mono"
+    },
+    "spacing": {},
+    "radius": {
+      "--radius": {
+        "value": "8px",
+        "source": "src/index.css"
+      }
+    },
+    "shadows": {},
+    "motion": {
+      "principles": "Pointer-responsive ASCII portrait, spring tilt and magnetic interactions, selectable layered education cards, technology orbit with pause, and reduced-motion support."
+    },
+    "density": "editorial"
+  },
+  "components": {
+    "installed": [
+      "tilt"
+    ],
+    "preferredPrimitives": [
+      "semantic HTML",
+      "native dialog",
+      "21st Tilt"
+    ],
+    "patterns": [
+      "interactive ASCII portrait and photo mode",
+      "project filters and detail dialogs",
+      "selectable education record stack",
+      "interactive technology orbit and category tabs",
+      "magnetic contact link",
+      "keyboard mobile navigation"
+    ]
+  },
+  "constraints": {
+    "must": [
+      "Preserve all 14 projects and original resume",
+      "Present AI engineer and full-stack developer identity",
+      "Use the owner actual portrait from GitHub profile",
+      "White, black and neutral gray surrounding interface",
+      "Keep original project illustrations",
+      "Keyboard, touch and reduced-motion support",
+      "Portrait photograph fallback without canvas"
+    ],
+    "avoid": [
+      "Invented metrics or testimonials",
+      "Generic gradient cards",
+      "Inert controls",
+      "Uncontrolled or scroll-blocking animation"
+    ]
+  },
+  "decisions": [
+    {
+      "decision": "White-and-black editorial page with owner ASCII portrait, broader AI/full-stack positioning, interactive education archive, identity card, and technology explorer.",
+      "reason": "Present the owner portrait, engineering disciplines, and academic background through a coherent monochrome interface."
+    },
+    {
+      "decision": "Use existing retrieved 21st Tilt plus original implementations informed by catalog metadata for dither portrait, stacked records, orbiting skills and magnetic buttons.",
+      "reason": "Reuse the retrieved Tilt primitive and implement the other interactions locally, with accurate catalog attribution."
+    }
+  ],
+  "evidence": [
+    {
+      "fact": "components.installed",
+      "source": "src/components/ui"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "src/index.css"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:shadcn",
+      "source": "components.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v3",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:vite",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-11-19T14:33:26.873Z"
+}

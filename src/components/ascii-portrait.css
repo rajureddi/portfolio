@@ -1,0 +1,394 @@
+.portrait {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  margin: 0;
+  isolation: isolate;
+  color: #161616;
+  background: #fafaf8;
+}
+
+.portrait-heading {
+  position: absolute;
+  top: 16px;
+  left: 36px;
+  right: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font:
+    8px 'DM Mono',
+    monospace;
+  letter-spacing: 0.8px;
+  color: #666660;
+}
+.portrait-heading > span:last-child {
+  color: #666660;
+  white-space: nowrap;
+}
+.portrait-ruler-x {
+  position: absolute;
+  left: 36px;
+  right: 26px;
+  top: 38px;
+  height: 9px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.portrait-ruler-x i {
+  display: block;
+  width: 1px;
+  height: 3px;
+  background: #d8d8d1;
+}
+.portrait-ruler-x i.portrait-tick-major {
+  height: 7px;
+  background: #afafa7;
+}
+.portrait-ruler-y {
+  position: absolute;
+  top: 56px;
+  bottom: 96px;
+  left: 17px;
+  width: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.portrait-ruler-y i {
+  display: block;
+  width: 3px;
+  height: 1px;
+  background: #d8d8d1;
+}
+.portrait-ruler-y i.portrait-tick-major {
+  width: 7px;
+  background: #afafa7;
+}
+
+.portrait-stage {
+  position: absolute;
+  inset: 55px 25px 94px 35px;
+  border: 1px solid #e4e4dd;
+  outline: none;
+  perspective: 900px;
+  touch-action: pan-y;
+}
+.portrait-stage:focus-visible {
+  outline: 2px solid #161616;
+  outline-offset: 5px;
+}
+.portrait-depth-plane {
+  position: absolute;
+  inset: 8px;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--portrait-shift-x, 0px), var(--portrait-shift-y, 0px), 0)
+    rotateX(var(--portrait-rotate-x, 0deg)) rotateY(var(--portrait-rotate-y, 0deg));
+  will-change: transform;
+}
+.portrait-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+}
+.portrait-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+  filter: grayscale(1) contrast(1.04);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  clip-path: ellipse(48% 49% at 50% 50%);
+}
+.portrait[data-mode='photo'] .portrait-photo,
+.portrait[data-image='loading'] .portrait-photo {
+  opacity: 1;
+}
+.portrait[data-mode='photo'] .portrait-canvas {
+  opacity: 0;
+}
+.portrait[data-image='error'] .portrait-photo,
+.portrait[data-image='error'] .portrait-canvas {
+  display: none;
+}
+
+.portrait-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  z-index: 2;
+  pointer-events: none;
+}
+.portrait-corner-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid #6e6e65;
+  border-left: 1px solid #6e6e65;
+}
+.portrait-corner-tr {
+  top: -1px;
+  right: -1px;
+  border-top: 1px solid #6e6e65;
+  border-right: 1px solid #6e6e65;
+}
+.portrait-corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 1px solid #6e6e65;
+  border-left: 1px solid #6e6e65;
+}
+.portrait-corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid #6e6e65;
+  border-right: 1px solid #6e6e65;
+}
+.portrait-crosshair {
+  position: absolute;
+  left: 10px;
+  bottom: 9px;
+  color: #999991;
+  font:
+    12px 'DM Mono',
+    monospace;
+  pointer-events: none;
+}
+.portrait-monogram {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-content: center;
+  justify-items: center;
+  gap: 18px;
+}
+.portrait[data-image='error'] .portrait-monogram {
+  display: grid;
+}
+.portrait-monogram > span {
+  font:
+    500 clamp(80px, 12vw, 140px)/1 'Manrope Variable',
+    sans-serif;
+  letter-spacing: -12px;
+}
+.portrait-monogram-dot {
+  color: #9e9e95;
+}
+.portrait-monogram small {
+  font:
+    9px 'DM Mono',
+    monospace;
+  letter-spacing: 3px;
+}
+
+.portrait-footer {
+  position: absolute;
+  left: 35px;
+  right: 25px;
+  bottom: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.portrait-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #666660;
+  font:
+    8px 'DM Mono',
+    monospace;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.portrait-hint > span:first-child {
+  color: #393934;
+  font-size: 16px;
+}
+.portrait-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.portrait-modes {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid #d7d7ce;
+  border-radius: 100px;
+  background: #fafaf8;
+}
+.portrait-modes button {
+  min-height: 29px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 100px;
+  background: transparent;
+  color: #666660;
+  font:
+    500 10px 'Manrope Variable',
+    sans-serif;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+.portrait-modes button[aria-pressed='true'] {
+  color: #fafaf8;
+  background: #1b1b18;
+}
+.portrait-modes button:hover:not(:disabled) {
+  color: #161616;
+  background: #eaeae4;
+}
+.portrait-modes button[aria-pressed='true']:hover {
+  color: #fafaf8;
+  background: #33332d;
+}
+.portrait-motion {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7d7ce;
+  border-radius: 50%;
+  background: #fafaf8;
+  color: #33332d;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.portrait-motion:hover:not(:disabled) {
+  border-color: #55554c;
+}
+.portrait-controls button:focus-visible {
+  outline: 2px solid #161616;
+  outline-offset: 4px;
+}
+.portrait-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.portrait-caption {
+  position: absolute;
+  bottom: 14px;
+  left: 35px;
+  color: #666660;
+  font:
+    7px 'DM Mono',
+    monospace;
+  letter-spacing: 1px;
+}
+.portrait-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1100px) {
+  .portrait-heading {
+    left: 26px;
+    right: 16px;
+    font-size: 7px;
+  }
+  .portrait-ruler-x {
+    left: 26px;
+    right: 16px;
+  }
+  .portrait-ruler-y {
+    left: 8px;
+  }
+  .portrait-stage {
+    left: 25px;
+    right: 15px;
+  }
+  .portrait-footer {
+    left: 25px;
+    right: 15px;
+  }
+  .portrait-caption {
+    left: 25px;
+  }
+  .portrait-hint {
+    font-size: 7px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 620px) {
+  .portrait {
+    height: 400px;
+    min-height: 400px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .portrait-heading {
+    top: 8px;
+    left: 26px;
+    right: 16px;
+    font-size: 7px;
+    letter-spacing: 0.4px;
+  }
+  .portrait-ruler-x {
+    top: 26px;
+  }
+  .portrait-ruler-y {
+    top: 43px;
+    bottom: 87px;
+  }
+  .portrait-stage {
+    top: 42px;
+    bottom: 85px;
+  }
+  .portrait-depth-plane {
+    inset: 5px;
+  }
+  .portrait-footer {
+    bottom: 36px;
+  }
+  .portrait-caption {
+    bottom: 8px;
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .portrait-modes button {
+    padding: 0 12px;
+    min-height: 29px;
+  }
+  .portrait-hint {
+    font-size: 6px;
+    letter-spacing: 0.4px;
+    gap: 5px;
+  }
+  .portrait-motion {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-canvas,
+  .portrait-photo,
+  .portrait-controls button {
+    transition: none;
+  }
+}
